@@ -7,9 +7,12 @@ import os
 import json
 
 NUM_PREPROCESSING_WORKERS = 2
-
+from pathlib import Path
+import sys
 
 def main():
+    print(sys.argv)
+    print(Path(sys.argv[0]).with_suffix(".args"))
     argp = HfArgumentParser(TrainingArguments)
     # The HfArgumentParser object collects command-line arguments into an object (and provides default values for unspecified arguments).
     # In particular, TrainingArguments has several keys that you'll need/want to specify (when you call run.py from the command line):
